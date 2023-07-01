@@ -51,13 +51,26 @@ class _AddProducmentPageState extends State<AddProducmentPage> {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      labelText: "Mahsulot nomi"),
                 ),
-                hintText: "Mahsulot nomi",
-              ),
+                const SizedBox(
+                  height: 10,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      labelText: "Mahsulot narxi"),
+                ),
+              ],
             ),
           ),
           const Row(

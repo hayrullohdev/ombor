@@ -10,16 +10,56 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Map> list = [
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
-    {"title": "Qizil olma", "subtitle": "27/06/2023, 09:49"},
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
+    {
+      "title": "Qizil olma",
+      "subtitle": "27/06/2023, 09:49",
+      "narxi": "10 000 so'm"
+    },
   ];
   @override
   Widget build(BuildContext context) {
@@ -41,6 +81,38 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 28),
                 ),
               ),
+              SizedBox(
+                width: 50,
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: 15,
+                      left: 10,
+                    ),
+                    child: Text(
+                      "Jami summa:",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF2CBB5C),
+                          fontSize: 15),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: Text(
+                      "100 000 so'm",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF2CBB5C),
+                          fontSize: 15),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
           Expanded(
@@ -60,9 +132,9 @@ class _HomePageState extends State<HomePage> {
                         decoration: const BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                                blurRadius: 10.0,
+                                blurRadius: 5.0,
                                 offset: Offset(0, 5),
-                                color: Colors.grey),
+                                color: Color(0xFF2CBB5C)),
                           ],
                           shape: BoxShape.circle,
                           color: Color(0xFF2CBB5C),
@@ -98,7 +170,29 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Narxi: ",
+                            style: TextStyle(
+                                color: Color(0xFF2CBB5C),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12),
+                          ),
+                          Text(
+                            list[index]["narxi"],
+                            style: const TextStyle(
+                                color: Color(0xFF2CBB5C),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 );
               },

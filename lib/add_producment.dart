@@ -11,7 +11,7 @@ class AddProducmentPage extends StatefulWidget {
 class _AddProducmentPageState extends State<AddProducmentPage> {
   int count = 0;
   int hide_count = 0;
-
+//  late String hajm;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +79,10 @@ class _AddProducmentPageState extends State<AddProducmentPage> {
                 padding: EdgeInsets.only(left: 10, top: 10),
                 child: Text(
                   "Mahsulot soni:",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Color(0xFF2CBB5C)),
                 ),
               ),
             ],
@@ -160,6 +163,79 @@ class _AddProducmentPageState extends State<AddProducmentPage> {
                       ),
                     ),
                   ),
+                ),
+              ),
+            ],
+          ),
+          const Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 10, top: 10),
+                child: Text(
+                  "Mahsulot sifati va hajmi:",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Color(0xFF2CBB5C)),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10,
+                  left: 10,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      count--;
+                      hide_count--;
+                      if (hide_count == -1) {
+                        hide_count = 1;
+                      }
+                      if (count == -1) {
+                        count = 0;
+                      }
+                    });
+                  },
+                  child: SizedBox(
+                    height: 45,
+                    child: Center(
+                      child: ElevatedButton(
+                          onPressed: () {}, child: const Text("Kg")),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10,
+                ),
+                child: SizedBox(
+                  height: 45,
+                  child: Center(
+                      child: ElevatedButton(
+                          onPressed: () {}, child: const Text("L"))),
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10,
+                ),
+                child: SizedBox(
+                  height: 45,
+                  child: Center(
+                      child: ElevatedButton(
+                          onPressed: () {}, child: const Text("T"))),
                 ),
               ),
             ],

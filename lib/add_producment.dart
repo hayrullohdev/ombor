@@ -188,25 +188,11 @@ class _AddProducmentPageState extends State<AddProducmentPage> {
                   top: 10,
                   left: 10,
                 ),
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      count--;
-                      hide_count--;
-                      if (hide_count == -1) {
-                        hide_count = 1;
-                      }
-                      if (count == -1) {
-                        count = 0;
-                      }
-                    });
-                  },
-                  child: SizedBox(
-                    height: 45,
-                    child: Center(
-                      child: ElevatedButton(
-                          onPressed: () {}, child: const Text("Kg")),
-                    ),
+                child: SizedBox(
+                  height: 45,
+                  child: Center(
+                    child: ElevatedButton(
+                        onPressed: () {}, child: const Text("Kg")),
                   ),
                 ),
               ),
@@ -226,17 +212,6 @@ class _AddProducmentPageState extends State<AddProducmentPage> {
               ),
               const SizedBox(
                 width: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 10,
-                ),
-                child: SizedBox(
-                  height: 45,
-                  child: Center(
-                      child: ElevatedButton(
-                          onPressed: () {}, child: const Text("T"))),
-                ),
               ),
             ],
           ),

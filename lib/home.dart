@@ -14,75 +14,50 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 15,
-                  left: 10,
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            const Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "Mahsulotlar",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2CBB5C),
+                        fontSize: 28),
+                  ),
                 ),
-                child: Text(
-                  "Mahsulotlar",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2CBB5C),
-                      fontSize: 28),
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: 15,
-                      left: 10,
-                    ),
-                    child: Text(
+                Column(
+                  children: [
+                    Text(
                       "Jami summa:",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF2CBB5C),
-                          fontSize: 15),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10,
-                    ),
-                    child: Text(
+                    Text(
                       "100 000 so'm",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF2CBB5C),
-                          fontSize: 15),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Expanded(
-            child: FutureBuilder(
-              future: DefaultAssetBundle.of(context)
-                  .loadString('asset/data/data.json'),
-              builder: (context, snapshot) {
-                var newData = jsonDecode(snapshot.data.toString());
+                  ],
+                ),
+              ],
+            ),
+            Expanded(
+              child: FutureBuilder(
+                future: DefaultAssetBundle.of(context)
+                    .loadString('asset/data/data.json'),
+                builder: (context, snapshot) {
+                  var newData = jsonDecode(snapshot.data.toString());
 
-                return ListView.builder(
-                  itemCount: newData == null ? 0 : newData.length,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 15,
-                            left: 10,
-                          ),
-                          child: Container(
+                  return ListView.builder(
+                    itemCount: newData == null ? 0 : newData.length,
+                    itemBuilder: (context, index) {
+                      return Row(
+                        children: [
+                          Container(
                             height: 50,
                             width: 50,
                             decoration: const BoxDecoration(
@@ -102,35 +77,32 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 13),
-                              child: Text(
-                                newData[index]["title"],
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 13),
+                                child: Text(
+                                  newData[index]["title"],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 22,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Text(
-                              newData[index]["subtitle"],
-                              style: const TextStyle(
-                                color: Colors.grey,
-                                fontSize: 12,
+                              Text(
+                                newData[index]["subtitle"],
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Row(
+                            ],
+                          ),
+                          const Spacer(),
+                          Row(
                             children: [
                               const Text(
                                 "Narxi: ",
@@ -147,15 +119,15 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
